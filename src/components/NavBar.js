@@ -17,6 +17,9 @@ function NavBar() {
           <li className="px-2">
             <a href="">contacto</a>
           </li>
+          <li className="px-2">
+            <a href="">promos</a>
+          </li>
         </ul>
       </div>
     </div>
