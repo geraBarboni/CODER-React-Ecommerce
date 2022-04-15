@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NavBar() {
+const NavBar = ({ children }) => {
   return (
     <div className="bg-gray-400 p-3 flex">
       <div className="font-semibold">
@@ -19,6 +19,9 @@ function NavBar() {
           </li>
           <li className="px-2">
             <a href="">promos</a>
+          </li>
+          <li className="p-1 pl-7">
+            <a href="">{children}</a>
           </li>
         </ul>
       </div>
