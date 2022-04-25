@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Contador = ({ stock, initial }) => {
   const [count, setCount] = useState(parseInt(initial))
+
   const addHandler = () => {
     if (count < stock) {
       setCount(count + 1)
     }
   }
+
   const resHandler = () => {
     if (count > 0) {
       setCount(count - 1)
@@ -15,6 +17,7 @@ const Contador = ({ stock, initial }) => {
   //Count es el valor
   //SetCount es la funcion que modifica el valor de Count
   //useState(valor inicial)
+
   return (
     <div className="m-3 h-80 w-56 ">
       <div className="bg-gray-300 h-5/6 w-56 my-2 rounded flex">
