@@ -19,20 +19,17 @@ const Contador = ({ stock, initial }) => {
   //useState(valor inicial)
 
   return (
-    <div className="m-3 h-80 w-56 ">
-      <div className="bg-gray-300 h-5/6 w-56 my-2 rounded flex">
-        <p className="m-auto">stock: {stock}</p>
-      </div>
-      <div className="mx-8 justify-between mt-auto">
+    <div className="m-auto">
+      <div className="justify-between m-auto">
         <button
-          className="button w-8 border-2 border-gray-700 m-5 rounded hover:shadow-md hover:bg-slate-400 ease-out duration-200 active:bg-slate-900 active:text-white"
+          className="button w-8 border-2 border-gray-700 mx-5 rounded hover:shadow-md hover:bg-slate-400 ease-out duration-200 active:bg-slate-900 active:text-white"
           onClick={resHandler}
         >
           -
         </button>
         <span className="m-auto">{count}</span>
         <button
-          className="button w-8 border-2 border-gray-700 m-5 rounded hover:shadow-md hover:bg-slate-400 ease-out duration-200 active:bg-slate-900 active:text-white"
+          className="button w-8 border-2 border-gray-700 mx-5 rounded hover:shadow-md hover:bg-slate-400 ease-out duration-200 active:bg-slate-900 active:text-white"
           onClick={addHandler}
         >
           +
