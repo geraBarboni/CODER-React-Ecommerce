@@ -1,24 +1,22 @@
 import React from 'react'
-import ItemCount from './ItemCount'
+import { Link } from 'react-router-dom'
 
-const Item = ({ title, price, pictureURL }) => {
+const Item = ({ item }) => {
   return (
-    <div className="w-60 rounded-lg shadow-2xl m-auto my-7">
-      <div className="w-60 h-60 bg-neutral-100 rounded-t-lg">
-        <img src={pictureURL} className="w-full h-full rounded-lg" />
-      </div>
-      <div className="w-60 h-20 bg-neutral-100 p-2 flex">
-        <div className="w-2/3 m-auto">
-          <p className="text-xl">{title}</p>
-          <p className="text-sm">desc</p>
+    <div className="w-60 rounded-md shadow-md m-auto my-5 font-dm-salt hover:shadow-2xl duration-200">
+      <Link to={`/product/${item.id}`}>
+        <div className="w-60 h-60 bg-white rounded-t-lg">
+          <img src={item.pictureURL} className="w-full h-full rounded-t-lg" />
         </div>
-        <div className="w-1/3 m-auto">
-          <p className="text-xl">{price}</p>
+        <div className="w-60 h-20 bg-neutral-100 p-2 rounded-b-lg flex">
+          <div className="w-2/3 m-auto">
+            <p className="text-lg">{item.title}</p>
+          </div>
+          <div className="w-1/3 flex">
+            <p className="text-lg m-auto">{item.price}</p>
+          </div>
         </div>
-      </div>
-      <div className="w-60 h-12 flex bg-neutral-100 rounded-b-lg">
-        <ItemCount stock={5} initial={0} />
-      </div>
+      </Link>
     </div>
   )
 }

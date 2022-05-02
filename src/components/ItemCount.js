@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const Contador = ({ stock, initial }) => {
+const Contador = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(parseInt(initial))
 
   const addHandler = () => {
@@ -19,22 +19,73 @@ const Contador = ({ stock, initial }) => {
   //useState(valor inicial)
 
   return (
-    <div className="m-auto">
-      <div className="justify-between m-auto">
+    <div
+      className="w-full
+      font-dm-sans
+      font-medium"
+    >
+      <div className="m-auto w-full flex justify-between">
         <button
-          className="button w-8 border-2 border-gray-700 mx-5 rounded hover:shadow-md hover:bg-slate-400 ease-out duration-200 active:bg-slate-900 active:text-white"
+          className="
+          text-yellow-400
+          w-8
+          h-8
+          border-2
+         border-yellow-400
+          rounded
+          bg-gray-900
+          duration-150
+          hover:bg-gray-700
+          active:bg-slate-200
+          active:text-gray-900
+          active:border-gray-900
+          "
           onClick={resHandler}
         >
           -
         </button>
         <span className="m-auto">{count}</span>
         <button
-          className="button w-8 border-2 border-gray-700 mx-5 rounded hover:shadow-md hover:bg-slate-400 ease-out duration-200 active:bg-slate-900 active:text-white"
+          className="
+          text-yellow-400
+          w-8
+          h-8
+          border-2
+         border-yellow-400
+          rounded
+          bg-gray-900
+          duration-150
+          hover:bg-gray-700
+          active:bg-slate-200
+          active:text-gray-900
+          active:border-gray-900
+          "
           onClick={addHandler}
         >
           +
         </button>
       </div>
+      <button
+        className="
+        text-yellow-400
+        font-dm-sans
+        font-medium
+        p-2
+        w-full
+        mt-3 md:mt-5 lg:mt-7
+        border-2
+       border-yellow-400
+        rounded
+        bg-gray-900
+        duration-150
+        hover:bg-gray-700
+        active:bg-slate-200
+        active:text-gray-900
+        active:border-gray-900
+      "
+      >
+        Agregar al carrito
+      </button>
     </div>
   )
 }
