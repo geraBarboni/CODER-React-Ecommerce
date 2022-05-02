@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const Contador = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(parseInt(initial))
@@ -14,9 +14,6 @@ const Contador = ({ stock, initial, onAdd }) => {
       setCount(count - 1)
     }
   }
-  //Count es el valor
-  //SetCount es la funcion que modifica el valor de Count
-  //useState(valor inicial)
 
   return (
     <div
@@ -83,6 +80,7 @@ const Contador = ({ stock, initial, onAdd }) => {
         active:text-gray-900
         active:border-gray-900
       "
+        onClick={onAdd(count)}
       >
         Agregar al carrito
       </button>

@@ -1,6 +1,9 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 const ItemDetail = ({ item }) => {
+  const onAdd = (cantidad) => {
+    console.log(`compraste ${cantidad} unidades`)
+  }
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-2">
       <div className="w-full h-full flex">
@@ -23,7 +26,7 @@ const ItemDetail = ({ item }) => {
           </div>
 
           <div className="py-2 flex">
-            <ItemCount stock={item.stock} initial={1} />
+            <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
           </div>
         </div>
       </div>
