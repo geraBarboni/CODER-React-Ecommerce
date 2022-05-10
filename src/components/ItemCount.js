@@ -80,7 +80,9 @@ const Contador = ({ stock, initial, onAdd }) => {
         active:text-gray-900
         active:border-gray-900
       "
-        onClick={() => onAdd(count)}
+        onClick={() => {
+          onAdd(count)
+        }}
       >
         Agregar al carrito
       </button>

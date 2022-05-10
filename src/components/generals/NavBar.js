@@ -14,11 +14,6 @@ const NavBar = ({ children }) => {
       </div>
       <div className="ml-auto">
         <ul className="flex font-dm-sans text-white">
-          {/*
-          <li className="px-2">
-            <Link to={'/cetegory'}>Catálogo</Link>
-          </li>
-          */}
           <li className="px-2">
             <Link to={'/cetegory/shoes'}>Shoes</Link>
           </li>

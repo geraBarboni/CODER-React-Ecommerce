@@ -13,7 +13,7 @@ const Item = ({ item }) => {
             <p className="text-lg">{item.title}</p>
           </div>
           <div className="w-1/3 flex">
-            <p className="text-lg m-auto">{item.price}</p>
+            <p className="text-lg m-auto">${item.price}</p>
           </div>
         </div>
       </Link>

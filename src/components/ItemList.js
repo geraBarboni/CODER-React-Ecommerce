@@ -10,7 +10,7 @@ const ItemList = ({ category }) => {
     const promesa = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(productsList)
-      }, 2000)
+      }, 100)
     })
     promesa
       .then((result) => {
