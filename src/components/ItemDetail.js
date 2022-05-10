@@ -50,7 +50,7 @@ const ItemDetail = ({ item }) => {
               {item.desc}
             </p>
           </div>
-          <div className="py-2 flex">
+          <div className="py-2">
             {isIn || cantidad.length > 0 ? (
               <FinishBuy />
             ) : (

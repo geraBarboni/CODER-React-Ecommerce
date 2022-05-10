@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/cartContext'
 
 const NavBar = ({ children }) => {
+  const { cart } = useContext(CartContext)
   return (
     <div className="bg-black p-3 flex shadow-2xl">
       <div>
@@ -20,9 +22,13 @@ const NavBar = ({ children }) => {
           <li className="px-2">
             <Link to={'/cetegory/clothes'}>Clothes</Link>
           </li>
-          <li className="p-1 pl-7">
-            <a href="">{children}</a>
-          </li>
+          {cart.length > 0 ? (
+            <li className="p-1 pl-7">
+              <Link to={'/cart'}>{children}</Link>
+            </li>
+          ) : (
+            <></>
+          )}
         </ul>
       </div>
     </div>

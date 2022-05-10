@@ -13,7 +13,7 @@ const FinishBuy = () => {
         w-full
         mt-3 md:mt-5 lg:mt-7
         border-2
-    border-gray-900
+      border-gray-900
         rounded
         bg-yellow-400
         duration-150

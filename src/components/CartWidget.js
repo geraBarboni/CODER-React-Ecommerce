@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartContext } from '../context/cartContext'
 
 function CartWidget() {
+  const { cart } = useContext(CartContext)
   return (
-    <div className="">
+    <div className="relative">
+      <div
+        className="bg-yellow-400 
+       rounded-full 
+       absolute 
+       -mt-2 
+       ml-2 
+       text-black
+       w-4
+       h-4
+       text-xs
+       flex
+       "
+      >
+        <span className="m-auto">
+          {cart.map((i) => i.cantidad).reduce((p, c) => p + c, 0)}
+        </span>
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
