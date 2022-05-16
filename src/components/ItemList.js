@@ -1,33 +1,54 @@
 import React, { useEffect, useState } from 'react'
-
-import productsList from '../data/productsList'
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from 'firebase/firestore'
 import Item from './Item'
+import LoadingItem from './loading/LoadingItem'
 
 const ItemList = ({ category }) => {
   const [products, setProducts] = useState([])
-
+  const [productsFilter, setProductsFilter] = useState([])
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
-    const promesa = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(productsList)
-      }, 100)
-    })
-    promesa
-      .then((result) => {
-        setProducts(result)
+    const db = getFirestore()
+    if (category) {
+      //console.log('existe una categoria')
+      //Filtrados
+      const q = query(
+        collection(db, 'items'),
+        where('category', '==', category),
+      )
+      getDocs(q).then((snapshot) => {
+        setProductsFilter(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })),
+        )
+        setLoading(false)
       })
-      .catch((error) => {
-        console.log('error: ', error)
+    } else {
+      //Todos los items
+      const itemsCollection = collection(db, 'items')
+      getDocs(itemsCollection).then((snapshot) => {
+        setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+
+        setLoading(false)
       })
-  }, [])
+    }
+  }, [category])
 
   return (
     <div className="w-11/12 m-auto h-auto">
+      {loading && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+          <LoadingItem />
+        </div>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {category
-          ? products
-              .filter((allProducts) => allProducts.category === category)
-              .map((item) => <Item item={item} key={item.id} />)
+          ? productsFilter.map((item) => <Item item={item} key={item.id} />)
           : products.map((item) => <Item item={item} key={item.id} />)}
       </div>
     </div>

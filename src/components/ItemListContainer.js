@@ -3,17 +3,17 @@ import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
 
 function ItemListContainer({ titulo }) {
-  const { id } = useParams()
+  const { category } = useParams()
 
   return (
     <>
       <div className="mt-5">
         <div className="flex">
           <h3 className="m-auto text-4xl font-bold font-unifrakturMaguntia">
-            {id ? id : titulo}
+            {category ? category : titulo}
           </h3>
         </div>
-        <ItemList category={id} />
+        <ItemList category={category} />
       </div>
     </>
   )
