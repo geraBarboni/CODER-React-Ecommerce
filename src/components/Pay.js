@@ -20,10 +20,12 @@ const Pay = () => {
     cvv: '',
     cuotes: '',
   })
+  const fecha = new Date(Date.now())
   const [order, setOrder] = useState({
     buyer: {},
     items: cart,
     total: cart.map((i) => i.price * i.cantidad).reduce((p, c) => p + c, 0),
+    date: fecha.toLocaleDateString(),
   })
   const handleClientInfo = (n, v) => {
     setBuyer({ ...buyer, [n]: v })
@@ -39,6 +41,7 @@ const Pay = () => {
           <form className="font-semibold font-dm-salt">
             <div className="grid grid-cols-1 lg:grid-cols-3">
               <input
+                required
                 type="text"
                 className="border-2 border-gray-700 rounded m-1 p-1 focus:border-yellow-400"
                 placeholder="Nombres"
@@ -48,6 +51,7 @@ const Pay = () => {
                 }
               ></input>
               <input
+                required
                 type="text"
                 className="border-2 border-gray-700 rounded m-1 p-1 focus:border-yellow-400"
                 placeholder="Apellidos"
@@ -57,6 +61,7 @@ const Pay = () => {
                 }
               ></input>
               <input
+                required
                 type="date"
                 className="border-2 border-gray-700 rounded m-1 p-1 focus:border-yellow-400"
                 placeholder="Fecha de nacimiento"
@@ -68,6 +73,7 @@ const Pay = () => {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <input
+                required
                 type="tel"
                 className="border-2 border-gray-700 rounded m-1 p-1 focus:border-yellow-400"
                 placeholder="Telefono"
@@ -77,6 +83,7 @@ const Pay = () => {
                 }
               ></input>
               <input
+                required
                 type="email"
                 className="border-2 border-gray-700 rounded m-1 p-1 focus:border-yellow-400"
                 placeholder="Email"
@@ -88,6 +95,7 @@ const Pay = () => {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-4">
               <input
+                required
                 type="text"
                 className="border-2 border-gray-700 rounded m-1 p-1 focus:border-yellow-400"
                 placeholder="Provincia"
@@ -97,6 +105,7 @@ const Pay = () => {
                 }
               ></input>
               <input
+                required
                 type="text"
                 className="border-2 border-gray-700 rounded m-1 p-1 focus:border-yellow-400"
                 placeholder="Calle"
@@ -106,6 +115,7 @@ const Pay = () => {
                 }
               ></input>
               <input
+                required
                 type="text"
                 className="border-2 border-gray-700 rounded m-1 p-1 focus:border-yellow-400"
                 placeholder="Numero"
@@ -115,6 +125,7 @@ const Pay = () => {
                 }
               ></input>
               <input
+                required
                 type="text"
                 className="border-2 border-gray-700 rounded m-1 p-1 focus:border-yellow-400"
                 placeholder="Barrio"
@@ -126,6 +137,7 @@ const Pay = () => {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3">
               <input
+                required
                 type="text"
                 className="border-2 border-gray-700 rounded m-1 p-1 focus:border-yellow-400"
                 placeholder="Numero de tarjeta"
@@ -135,6 +147,7 @@ const Pay = () => {
                 }
               ></input>
               <input
+                required
                 type="text"
                 className="border-2 border-gray-700 rounded m-1 p-1 focus:border-yellow-400"
                 placeholder="CVV"
@@ -144,6 +157,7 @@ const Pay = () => {
                 }
               ></input>
               <select
+                required
                 className="font-dm-salt border-2 bg-white border-gray-700 rounded m-1 p-2 focus:border-yellow-400"
                 placeholder="Cuotas"
                 name="cuotes"
