@@ -14,7 +14,6 @@ const ItemDetail = ({ item }) => {
   }, [item.id])
 
   const onAdd = (totalComprado) => {
-    console.log(`compraste ${totalComprado} unidades`)
     setCantidad(cantidad.concat({ item: item, cantidad: totalComprado }))
     addToCart({
       id: item.id,
@@ -27,7 +26,7 @@ const ItemDetail = ({ item }) => {
   }
 
   return (
-    <div className="w-full grid grid-cols-1 md:grid-cols-2">
+    <div className="w-full my-auto grid grid-cols-1 md:grid-cols-2">
       <div className="w-full h-full flex">
         <div className="m-auto w-96 h-96 rounded-lg bg-slate-100">
           <img
