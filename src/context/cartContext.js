@@ -4,7 +4,6 @@ import {
   doc,
   getDoc,
   getFirestore,
-  snapshotEqual,
   updateDoc,
 } from 'firebase/firestore'
 import React from 'react'

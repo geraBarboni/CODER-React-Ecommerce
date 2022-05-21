@@ -17,7 +17,6 @@ const ItemList = ({ category, brand }) => {
   useEffect(() => {
     const db = getFirestore()
     if (category) {
-      //console.log('existe una categoria')
       //Filtrados
       const q = query(
         collection(db, 'items'),
@@ -42,7 +41,6 @@ const ItemList = ({ category, brand }) => {
   useEffect(() => {
     const db = getFirestore()
     if (brand) {
-      //console.log('existe una categoria')
       //Filtrados
       const q = query(collection(db, 'items'), where('brand', '==', brand))
       getDocs(q).then((snapshot) => {

@@ -1,7 +1,9 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import BrandsNav from './BrandsNav'
+import Carrusel from './Carrusel'
 import ItemList from './ItemList'
+import LoadingCarrusel from './loading/LoadingCarrusel'
 
 function ItemListContainer({ titulo }) {
   const { category } = useParams()
@@ -9,6 +11,7 @@ function ItemListContainer({ titulo }) {
 
   return (
     <>
+      {category || brand ? <></> : <Carrusel />}
       <div className="mt-5 min-h-screen">
         {category || brand ? <></> : <BrandsNav />}
         <div className="flex">
