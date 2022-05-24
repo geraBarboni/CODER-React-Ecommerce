@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import BrandsNav from './BrandsNav'
 import Carrusel from './Carrusel'
 import ItemList from './ItemList'
-import LoadingCarrusel from './loading/LoadingCarrusel'
 
 function ItemListContainer({ titulo }) {
   const { category } = useParams()

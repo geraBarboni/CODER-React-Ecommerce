@@ -15,4 +15,4 @@ Integración de base de datos Firebase.
 
 ## Video explicativo
 
-[https://www.awesomescreenshot.com/video/8809509?key=3c7119a8104221ecd7a8de16b4bda221]
+https://www.awesomescreenshot.com/video/8809509?key=3c7119a8104221ecd7a8de16b4bda221
